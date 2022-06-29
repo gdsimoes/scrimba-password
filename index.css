@@ -1,3 +1,24 @@
+/* Variables */
+
+:root {
+    --background: #ecfdf5;
+}
+
+:root.theme-switch {
+    --background: #1f2937;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1f2937;
+    }
+
+    :root.theme-switch {
+        --background: #ecfdf5;
+    }
+}
+
 body {
-    margin: 0;
+    background-color: var(--background);
 }
