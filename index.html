@@ -9,10 +9,41 @@
         <!-- CSS Remedy: https://github.com/jensimmons/cssremedy -->
         <link rel="stylesheet" href="remedy.css" />
 
+        <!-- Light and Dark mode icons -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&family=Karla:wght@800&display=swap"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="index.css" />
         <script src="index.js" defer></script>
     </head>
     <body>
-        <button id="theme-switcher" type="button">toggle dark mode</button>
+        <main>
+            <button id="theme-switcher" type="button">
+                <span id="light-icon" class="material-symbols-outlined"
+                    >light_mode</span
+                >
+                <span id="dark-icon" class="material-symbols-outlined"
+                    >dark_mode</span
+                >
+            </button>
+            <h1>Generate a <br /><span>random password</span></h1>
+            <h2>Never use an insecure password again.</h2>
+            <button id="generator" type="button">Generate passwords</button>
+            <hr />
+            <div id="passwords">
+                <div class="password"></div>
+                <div class="password"></div>
+            </div>
+        </main>
     </body>
 </html>

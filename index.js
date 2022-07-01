@@ -1,3 +1,6 @@
+// Needs change!
+// document.querySelector(".material-symbols-outlined").textContent = "light_mode";
+
 const themeSwitcher = document.querySelector("#theme-switcher");
 
 themeSwitcher.addEventListener("click", () =>

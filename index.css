@@ -1,24 +1,166 @@
+/* Light and Dark mode icons */
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 /* Variables */
 
 :root {
+    --main-width: 100vw;
+    --btn-background: #10b981;
+    --btn-color: white;
+    --body-background: #1c1c1c;
+}
+
+/* Day theme */
+:root {
     --background: #ecfdf5;
+    --h1-color: #2b283a;
+    --h2-color: #6b7280;
+    --span-color: #10b981;
+    --hr-color: #d5d4d8;
 }
 
 :root.theme-switch {
     --background: #1f2937;
+    --h1-color: white;
+    --h2-color: #d5d4d8;
+    --span-color: #4adf86;
+    --hr-color: #2f3e53;
 }
 
-/* Dark theme */
+#light-icon {
+    display: none;
+}
+
+#dark-icon {
+    display: inline-block;
+}
+
+.theme-switch #light-icon {
+    display: inline-block;
+}
+
+.theme-switch #dark-icon {
+    display: none;
+}
+
+/* Night theme */
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #1f2937;
+        --h1-color: white;
+        --h2-color: #d5d4d8;
+        --span-color: #4adf86;
+        --hr-color: #2f3e53;
     }
 
     :root.theme-switch {
         --background: #ecfdf5;
+        --h1-color: #2b283a;
+        --h2-color: #6b7280;
+        --span-color: #10b981;
+        --hr-color: #d5d4d8;
+    }
+
+    #light-icon {
+        display: inline-block;
+    }
+
+    #dark-icon {
+        display: none;
+    }
+
+    .theme-switch #light-icon {
+        display: none;
+    }
+
+    .theme-switch #dark-icon {
+        display: inline-block;
+    }
+}
+
+/* Limit maximum width */
+@media (min-width: 1000px) {
+    :root {
+        --main-width: 1000px;
     }
 }
 
 body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--body-background);
+}
+
+main {
+    width: var(--main-width);
+    height: var(--main-width);
+    padding: calc(var(--main-width) * (115 / 550))
+        calc(var(--main-width) * (52 / 550));
+    /* This is necessary to make this the containing box of #theme-switcher */
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
     background-color: var(--background);
+}
+
+h1 {
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    font-size: calc(var(--main-width) * (40 / 550));
+    line-height: calc(var(--main-width) * (40 / 550));
+    letter-spacing: -0.025em;
+    color: var(--h1-color);
+}
+
+h1 span {
+    font-family: "Inter", sans-serif;
+    color: var(--span-color);
+}
+
+h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: calc(var(--main-width) * (20 / 550));
+    line-height: calc(var(--main-width) * (28 / 550));
+    color: var(--h2-color);
+}
+
+#generator {
+    color: var(--btn-color);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: calc(var(--main-width) * (16 / 550));
+    line-height: calc(var(--main-width) * (24 / 550));
+
+    padding: calc(var(--main-width) * (9 / 550))
+        calc(var(--main-width) * (16 / 550));
+    background-color: var(--btn-background);
+    border: none;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: calc(var(--main-width) * (6 / 550));
+}
+
+hr {
+    width: 100%;
+    color: var(--hr-color);
+}
+
+#theme-switcher {
+    background-color: var(--btn-background);
+    border: 2px solid var(--btn-background);
+    border-radius: 50%;
+    color: var(--btn-color);
+
+    position: absolute;
+    right: 0;
+    top: 0;
 }
