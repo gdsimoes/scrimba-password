@@ -20,6 +20,7 @@
     --h2-color: #6b7280;
     --span-color: #10b981;
     --hr-color: #d5d4d8;
+    --pwd-color: #5def92;
 }
 
 :root.theme-switch {
@@ -28,6 +29,7 @@
     --h2-color: #d5d4d8;
     --span-color: #4adf86;
     --hr-color: #2f3e53;
+    --pwd-color: #55f991;
 }
 
 #light-icon {
@@ -54,6 +56,7 @@
         --h2-color: #d5d4d8;
         --span-color: #4adf86;
         --hr-color: #2f3e53;
+        --pwd-color: #55f991;
     }
 
     :root.theme-switch {
@@ -62,6 +65,7 @@
         --h2-color: #6b7280;
         --span-color: #10b981;
         --hr-color: #d5d4d8;
+        --pwd-color: #5def92;
     }
 
     #light-icon {
@@ -178,4 +182,10 @@ hr {
 
     background-color: var(--pwd-background);
     border-radius: calc(var(--main-width) * (6 / 550));
+
+    text-align: center;
+    line-height: calc(var(--main-width) * (39 / 550));
+    color: var(--pwd-color);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
 }
