@@ -1,11 +1,19 @@
-// Needs change!
-// document.querySelector(".material-symbols-outlined").textContent = "light_mode";
-
+// Theme Switcher
 const themeSwitcher = document.querySelector("#theme-switcher");
 
 themeSwitcher.addEventListener("click", () =>
     document.documentElement.classList.toggle("theme-switch")
 );
+
+// Copy password
+const passwords = document.querySelectorAll(".password");
+for (const password of passwords) {
+    password.addEventListener("click", (event) => {
+        copyText = event.target.firstElementChild.textContent;
+        navigator.clipboard.writeText(copyText);
+        event.target.lastElementChild.classList.toggle("tooltip-show", true);
+    });
+}
 
 const characters = [
     "A",

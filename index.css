@@ -178,7 +178,6 @@ hr {
 
 .password {
     width: calc(var(--main-width) * (211 / 550));
-    height: calc(var(--main-width) * (39 / 550));
 
     background-color: var(--pwd-background);
     border-radius: calc(var(--main-width) * (6 / 550));
@@ -188,4 +187,24 @@ hr {
     color: var(--pwd-color);
     font-family: "Inter", sans-serif;
     font-weight: 500;
+
+    /* This is necessary to make this the containing box of .tooltip */
+    position: relative;
+}
+
+.tooltip {
+    /* display: inline-block; */
+    position: absolute;
+    visibility: hidden;
+
+    width: calc(var(--main-width) * (211 / 550));
+    top: 110%;
+    left: 0;
+
+    background-color: var(--pwd-background);
+    border-radius: calc(var(--main-width) * (6 / 550));
+}
+
+.tooltip-show {
+    visibility: visible;
 }
