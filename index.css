@@ -166,8 +166,8 @@ hr {
     color: var(--btn-color);
 
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10%;
+    top: 10%;
 }
 
 #passwords {
