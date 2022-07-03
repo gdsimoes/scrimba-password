@@ -10,6 +10,7 @@
     --btn-background: #10b981;
     --btn-color: white;
     --body-background: #1c1c1c;
+    --pwd-background: #273549;
 }
 
 /* Day theme */
@@ -163,4 +164,18 @@ hr {
     position: absolute;
     right: 0;
     top: 0;
+}
+
+#passwords {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.password {
+    width: calc(var(--main-width) * (211 / 550));
+    height: calc(var(--main-width) * (39 / 550));
+
+    background-color: var(--pwd-background);
+    border-radius: calc(var(--main-width) * (6 / 550));
 }
