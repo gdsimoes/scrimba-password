@@ -160,6 +160,12 @@ hr {
 }
 
 #theme-switcher {
+    width: 7vw;
+    height: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color: var(--btn-background);
     border: 2px solid var(--btn-background);
     border-radius: 50%;
@@ -167,7 +173,11 @@ hr {
 
     position: absolute;
     right: 10%;
-    top: 10%;
+    top: 15%;
+}
+
+.theme-icon {
+    font-size: calc(var(--main-width) * (30 / 550));
 }
 
 #passwords {
@@ -178,6 +188,7 @@ hr {
 
 .password {
     width: calc(var(--main-width) * (211 / 550));
+    height: calc(var(--main-width) * (39 / 550));
 
     background-color: var(--pwd-background);
     border-radius: calc(var(--main-width) * (6 / 550));
@@ -186,10 +197,13 @@ hr {
     line-height: calc(var(--main-width) * (39 / 550));
     color: var(--pwd-color);
     font-family: "Inter", sans-serif;
+    font-size: calc(var(--main-width) * (16 / 550));
     font-weight: 500;
 
     /* This is necessary to make this the containing box of .tooltip */
     position: relative;
+
+    /* overflow: hidden; */
 }
 
 .tooltip {

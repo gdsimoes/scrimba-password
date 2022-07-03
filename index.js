@@ -9,12 +9,18 @@ themeSwitcher.addEventListener("click", () =>
 const passwords = document.querySelectorAll(".password");
 for (const password of passwords) {
     password.addEventListener("click", (event) => {
-        copyText = event.target.firstElementChild.textContent;
-        navigator.clipboard.writeText(copyText);
-        event.target.lastElementChild.classList.toggle("tooltip-show", true);
+        copyText = event.currentTarget.firstElementChild.textContent;
+        if (copyText.length !== 0) {
+            navigator.clipboard.writeText(copyText);
+            event.currentTarget.lastElementChild.classList.toggle(
+                "tooltip-show",
+                true
+            );
+        }
     });
 }
 
+// Generate passwords
 const characters = [
     "A",
     "B",
@@ -108,3 +114,22 @@ const characters = [
     "?",
     "/",
 ];
+
+function randomChar() {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    return characters[randomIndex];
+}
+
+const pwdLength = 15;
+
+const generator = document.querySelector("#generator");
+generator.addEventListener("click", () => {
+    for (const password of passwords) {
+        let pwdText = "";
+        for (let i = 0; i < pwdLength; i++) {
+            pwdText += randomChar();
+        }
+        password.firstElementChild.textContent = pwdText;
+        password.lastElementChild.classList.toggle("tooltip-show", false);
+    }
+});
